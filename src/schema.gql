@@ -10,6 +10,7 @@ type User {
 }
 
 type Query {
+  getUser(id: Int!): User!
   users: [User!]!
 }
 
