@@ -18,7 +18,7 @@ import { BossModule } from './boss/boss.module';
     }),
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: ':memory:',
+      database: './main.sqlite',
       entities: ['dist/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
