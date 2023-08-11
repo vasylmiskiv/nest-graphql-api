@@ -2,24 +2,46 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Boss {
+  id: Int!
+  name: String!
+  users: [User!]
+}
+
 type User {
   id: Int!
   name: String!
   email: String!
   sex: String
+  bossId: Float!
+  boss: Boss!
 }
 
 type Query {
   getUser(id: Int!): User!
   users: [User!]!
+  boss(id: Int!): Boss!
 }
 
 type Mutation {
   addUser(createUserInput: CreateUserInput!): User!
+  createBoss(createBossInput: CreateBossInput!): Boss!
+  updateBoss(updateBossInput: UpdateBossInput!): Boss!
+  removeBoss(id: Int!): Boss!
 }
 
 input CreateUserInput {
   name: String!
   email: String!
   sex: String
+  bossId: Int!
+}
+
+input CreateBossInput {
+  name: String!
+}
+
+input UpdateBossInput {
+  name: String
+  id: Int!
 }
